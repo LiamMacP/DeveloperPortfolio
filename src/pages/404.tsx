@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link, HeadFC, PageProps } from "gatsby"
-import { PageLayout, Section } from "../components/Layout"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 
@@ -8,7 +7,7 @@ import { Footer } from "../components/Footer"
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header showHeading={true}/>
+      <Header showHeading={true} />
       <main className="flex flex-auto bg-gray-100/40" >
         <div className="flex-auto mx-auto  max-w-screen-2xl py-24 sm:py-32 px-6 lg:px-8">
           <p className="text-xl font-semibold text-blue-500 ">404</p>

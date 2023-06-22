@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby";
-import thumbnail from './../images/thumbnail.png';
+import { StaticImage } from "gatsby-plugin-image";
 
-export const Header: React.FC<HeaderProps> = ({showHeading = true, navLinks = []}) => {
+export const Header: React.FC<HeaderProps> = ({ showHeading = true, navLinks = [] }) => {
 
   const getActiveNavLinks = (navLinks: Array<NavigationLink>) => {
     return navLinks.filter(link => link.enabled ?? true)
@@ -39,9 +39,15 @@ export const Header: React.FC<HeaderProps> = ({showHeading = true, navLinks = []
 const Heading = () => {
   return (
     <div className="flex lg:flex-1">
-    <img className="h-10 w-auto pr-1 rounded-full" src={thumbnail} alt="" />
-    <Link to="/" className="px-2 py-2 font-bold">Liam MacPherson</Link>
-  </div>
+      <StaticImage
+        className="rounded-full"
+        src="../images/thumbnail.png"
+        alt="Liam MacPherson"
+        width={40} height={40}
+        placeholder="blurred"
+        layout="fixed" />
+      <Link to="/" className="px-2 py-2 font-bold">Liam MacPherson</Link>
+    </div>
   )
 }
 
