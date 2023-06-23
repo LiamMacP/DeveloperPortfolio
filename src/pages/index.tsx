@@ -30,7 +30,7 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
           <StaticImage
             className="rounded-full mx-auto"
-            src="../images/Thumbnail.png"
+            src="../images/thumbnail.png"
             alt="Liam MacPherson"
             width={256} height={256}
             placeholder="blurred"
