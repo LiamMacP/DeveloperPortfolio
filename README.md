@@ -5,5 +5,8 @@ A portfolio website for myself - Liam MacPherson.
 - [Gatsby (React)](https://www.gatsbyjs.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
+# Tools
+- Icons retrieved from [Bootstrap](https://icons.getbootstrap.com/)
+
 # Author
 GitHub: [@LiamMacP](https://github.com/LiamMacP)
