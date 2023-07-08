@@ -1,6 +1,6 @@
 import * as React from "react"
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export const Header: React.FC<HeaderProps> = ({ showHeading = true, navLinks = [] }) => {
 
@@ -37,15 +37,27 @@ export const Header: React.FC<HeaderProps> = ({ showHeading = true, navLinks = [
 }
 
 const Heading = () => {
+  const headerImage = useStaticQuery(graphql`
+  query {
+    thumbnail: file(relativePath: { eq: "thumbnail.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          layout: FIXED
+          placeholder: BLURRED
+          width: 40
+        )
+      }
+    }
+  }
+`);
+
   return (
     <div className="flex lg:flex-1">
-      <StaticImage
+      <GatsbyImage
         className="rounded-full"
-        src="../images/thumbnail.png"
+        image={headerImage.thumbnail.childImageSharp.gatsbyImageData}
         alt="Liam MacPherson"
-        width={40} height={40}
-        placeholder="blurred"
-        layout="fixed" />
+      />
       <Link to="/" className="px-2 py-2 font-bold">Liam MacPherson</Link>
     </div>
   )
