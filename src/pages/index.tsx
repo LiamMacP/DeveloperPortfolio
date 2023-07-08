@@ -15,7 +15,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <p className="ml-2 text-blue-600">This site is being actively developed - please come back later.</p>
           </div>
         </div>
-        <div className="mx-auto max-w-screen-2xl items-center justify-center pt-16 pb-24 md:pt-36 md:pb-48">
+        <div className="mx-auto max-w-screen-2xl items-center justify-center pt-8 pb-12 sm:pt-16 sm:pb-24 md:pt-36 md:pb-48">
           <div
             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl"
             aria-hidden="true"
@@ -39,7 +39,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <p className="text-center text-md py-1 px-10 sm:typing-animation">I'm a full-stack developer and coffee enthusiast ☕</p>
         </div>
         <div className="bg-gray-300/40">
-          <div className="mx-auto max-w-screen-2xl  py-10 sm:py-16 px-10 2xl:px-0">
+          <div className="mx-auto max-w-screen-2xl py-10 sm:py-16 px-10 2xl:px-0">
             <h1 className="text-2xl sm:text-3xl font-semibold underline underline-offset-8 decoration-2 decoration-blue-500/80 md:pb-16 pb-12">Skills</h1>
             <ul className="grid grid-cols-none md:grid-cols-2 lg:grid-cols-3 gap-8">
               <li className="bg-gray-100 rounded-lg shadow-md">
