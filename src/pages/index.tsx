@@ -36,11 +36,11 @@ const IndexPage: React.FC<PageProps> = () => {
             placeholder="blurred"
             layout="fixed" />
           <h1 className="font-semibold text-center text-3xl pt-4">Liam MacPherson</h1>
-          <p className="text-center text-md py-1 typing-animation">I'm a full-stack developer and coffee enthusiast ☕</p>
+          <p className="text-center text-md py-1 px-10 sm:typing-animation">I'm a full-stack developer and coffee enthusiast ☕</p>
         </div>
         <div className="bg-gray-300/40">
           <div className="mx-auto max-w-screen-2xl  py-10 sm:py-16 px-10 2xl:px-0">
-            <h1 className="text-2xl sm:text-3xl  font-semibold underline underline-offset-8 decoration-2 decoration-blue-500/80 md:pb-16 pb-12">Skills</h1>
+            <h1 className="text-2xl sm:text-3xl font-semibold underline underline-offset-8 decoration-2 decoration-blue-500/80 md:pb-16 pb-12">Skills</h1>
             <ul className="grid grid-cols-none md:grid-cols-2 lg:grid-cols-3 gap-8">
               <li className="bg-gray-100 rounded-lg shadow-md">
                 <div className="p-10">
