@@ -1,9 +1,10 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
+import { graphql } from "gatsby";
 import { Footer } from "../components/Footer"
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage: React.FC<PageProps> = ({data}) => {
   return (
     <React.Fragment>
       <main className="flex flex-col flex-auto bg-gray-100/80">
@@ -28,14 +29,14 @@ const IndexPage: React.FC<PageProps> = () => {
               }}
             />
           </div>
-          <StaticImage
+          <div className="flex px-10">
+          <GatsbyImage
             className="rounded-full mx-auto"
-            src="../images/thumbnail.png"
-            alt="Liam MacPherson"
-            width={256} height={256}
-            placeholder="blurred"
-            layout="fixed" />
-          <h1 className="font-semibold text-center text-3xl pt-4">Liam MacPherson</h1>
+            image={data.heroImage.childImageSharp.gatsbyImageData}
+            alt="Liam MacPherson"/>
+          </div>
+          
+          <h1 className="font-semibold text-center text-3xl pt-6">Liam MacPherson</h1>
           <p className="text-center text-md py-1 px-10 sm:typing-animation">I'm a full-stack developer and coffee enthusiast ☕</p>
         </div>
         <div className="bg-gray-300/40">
@@ -98,5 +99,18 @@ const IndexPage: React.FC<PageProps> = () => {
 }
 
 export const Head: HeadFC = () => <title>Liam MacPherson</title>
+
+export const pageQuery = graphql`
+  query {
+    heroImage: file(relativePath: { eq: "thumbnail.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          placeholder: BLURRED
+          width: 256
+        )
+      }
+    }
+  }
+`
 
 export default IndexPage
